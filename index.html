@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Style/style.css">
+    <script src="https://kit.fontawesome.com/dd38228dda.js" crossorigin="anonymous"></script>
+    <title>Where in the world?</title>
+</head>
+<body>
+
+    <nav id="nav-bar">
+        <div class="left-side">Where in the world?</div>
+        <div class="right-side" id="dark-mode-toggler">
+            <i class="fa-regular fa-moon"></i>
+            <p>Dark Mode</p>
+        </div>
+    </nav>
+
+    <section class="search-region">
+        <div class="search">
+            <input id="search-bar" type="text" placeholder="Search for a country...">
+        </div>
+        <div class="region">
+            <select class="dropdown">
+                <option selected hidden>Fiter by Region</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="countries">
+                
+    </section>
+    
+    <script type="module" src="./Scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+
+</body>
+</html>

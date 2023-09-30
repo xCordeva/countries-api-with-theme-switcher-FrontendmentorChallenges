@@ -1,0 +1,94 @@
+.back-button{
+    position: relative;
+    width: 90%;
+    padding: 0 5%;
+    margin-bottom: 50px;
+}
+.back-button::before{
+    content: "\f060";
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    margin:0 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+button{
+    height: 40px;
+    background-color: white;
+    width: 10%;
+    border-radius: 5px;
+    padding:0 40px;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--box-shadow-search-region);
+    color: var(--text-color);
+    background-color: var(--background-color-nav-and-boxes);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
+}
+button:hover{
+    background-color: hsl(0, 0%, 50%);
+}
+
+.container{
+    width: 90%;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+}
+.container .left-side{
+    width: 45%;
+}
+.container .left-side img{
+    width: 100%;
+    box-shadow: 0 0 50px hsl(0, 0%, 50%);
+}
+.container .right-side{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+.country-info{
+    display: flex;
+    justify-content: flex-start;
+}
+.country-info .country-info-left{
+    margin-right: 20%;
+}
+.country-info p{
+    font-weight: 400;
+}
+.country-info span{
+    font-weight: 700;
+}
+.country-border .border{
+    display: inline-block;
+    padding:0 15px;
+    border-radius: 3px;
+    margin:5px;
+    font-weight: 400;
+    border: 1px solid gray;
+    box-shadow: 0 0 5px hsl(0, 0%, 60%);
+}
+
+
+@media (max-width:800px){
+    .container{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+    .container .left-side,
+    .container .right-side{
+        width: 90%;
+    } 
+    .country-info{
+        flex-direction: column;
+    }
+    .country-info-left,
+    .country-info-right{
+        margin: 20px 0;
+    }
+}

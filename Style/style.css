@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Montserrat&family=Nunito+Sans:opsz@6..12&family=Poppins:wght@100&family=Ubuntu:wght@700&display=swap');
+
+:root{
+    --background-color-main: hsl(0, 0%, 98%);
+    --background-color-nav-and-boxes: white;
+    --text-color: black;
+    --box-shadow-search-region: 0 0 5px hsl(0, 0%, 80%);
+}
+.dark-mode{
+    --background-color-main: hsl(207, 26%, 17%);
+    --background-color-nav-and-boxes: hsl(209, 23%, 22%);
+    --text-color: white;
+    --box-shadow-search-region: 0 0 10px hsl(0, 0%, 10%);
+}
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    margin: 0;
+    background-color: var(--background-color-main);
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* nav bar*/
+nav{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: var(--background-color-nav-and-boxes);
+    margin-bottom: 50px;
+    box-shadow: 0 0 5px hsl(0, 0%, 80%);
+    padding: 0 5%;
+    transition: background-color 0.5s ease;
+}
+nav .right-side{
+    display: flex;
+    align-items: center;    
+    cursor: pointer;
+}
+nav .right-side i{
+    margin-right: 8px;   
+}
+nav .right-side:hover i{
+    animation: rotate 1s ease-in-out;
+}
+nav .right-side:hover{
+    scale: 1.05;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.search-region{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    padding: 0 5%;
+}
+.search{
+    width: 30%;
+    position: relative;
+}
+.search input{
+    height: 40px;
+    width: 90%;
+    border-radius: 5px;
+    border: none;
+    color: var(--text-color);
+    box-shadow: var(--box-shadow-search-region);
+    padding-left: 40px;
+    background-color: var(--background-color-nav-and-boxes);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
+}
+.search::before{
+    content: "\f002";
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.region{
+    width: 20%;
+}
+.region .dropdown{
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    box-shadow: var(--box-shadow-search-region);
+    padding: 10px;
+    background-color: var(--background-color-nav-and-boxes);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
+}
+
+.countries{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 250px));
+    gap: 2.5%;
+    justify-content: space-between;
+    justify-items: stretch;
+    align-items: stretch;
+    padding: 0 5%;
+    grid-row-gap: 50px;
+}
+.countries img{
+    width: 100%;
+}
+.country{
+    height: 100%;
+    background-color: var(--background-color-nav-and-boxes);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow-search-region);
+    transition: background-color 0.5s ease, box-shadowr 0.5s ease;
+}
+.country-content{
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.country-content span{
+    font-weight: 1000;
+}
+.country-content p{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+@media (max-width:569px){
+    .countries{
+        justify-content: center;
+    }
+    .search-region{
+        display: inline-block;
+    }
+    .search{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .region{
+        width: 50%;
+    }
+}
