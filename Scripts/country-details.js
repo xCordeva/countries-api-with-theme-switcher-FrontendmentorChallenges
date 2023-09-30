@@ -55,7 +55,7 @@ fetch(dataUrl)
 
                     <div class="country-info-left">
                         <p><span>Native Name: </span> ${matching.nativeName}</p>
-                        <p><span>Population: </span> ${matching.population}</p>
+                        <p><span>Population: </span> ${matching.population.toLocaleString()}</p>
                         <p><span>Region: </span> ${matching.region}</p>
                         <p><span>Sub Region: </span> ${matching.subregion}</p>
                         <p><span>Capital: </span> ${matching.capital}</p>

@@ -54,7 +54,7 @@ function renderCountries(data){
                     <img src="${country.flags.svg}" alt="flag">
                     <div class="country-content">
                         <h3>${country.name}</h3>
-                        <p><span>Population: </span>${country.population}</p>
+                        <p><span>Population: </span>${country.population.toLocaleString()}</p>
                         <p><span>Region: </span>${country.region}</p>
                         <p><span>Capital: </span>${country.capital}</p>
                     </div>
