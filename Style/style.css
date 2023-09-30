@@ -3,12 +3,14 @@
 :root{
     --background-color-main: hsl(0, 0%, 98%);
     --background-color-nav-and-boxes: white;
+    --background-color-boxes-hover: hsl(0, 0%, 90%);
     --text-color: black;
     --box-shadow-search-region: 0 0 5px hsl(0, 0%, 80%);
 }
 .dark-mode{
     --background-color-main: hsl(207, 26%, 17%);
     --background-color-nav-and-boxes: hsl(209, 23%, 22%);
+    --background-color-boxes-hover: hsl(0, 0%, 10%);
     --text-color: white;
     --box-shadow-search-region: 0 0 10px hsl(0, 0%, 10%);
 }
@@ -112,7 +114,7 @@ nav .right-side:hover{
 .countries{
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20%, 250px));
+    grid-template-columns: repeat(auto-fit, minmax(10%, 250px));
     gap: 2.5%;
     justify-content: space-between;
     justify-items: stretch;
@@ -129,7 +131,11 @@ nav .right-side:hover{
     border-radius: 5px;
     overflow: hidden;
     box-shadow: var(--box-shadow-search-region);
-    transition: background-color 0.5s ease, box-shadowr 0.5s ease;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+.country:hover{
+    background-color: var(--background-color-boxes-hover);
+    transition: background-color 0.5s ease;
 }
 .country-content{
     padding: 20px;
