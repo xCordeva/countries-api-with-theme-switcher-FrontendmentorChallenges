@@ -10,7 +10,7 @@
 .dark-mode{
     --background-color-main: hsl(207, 26%, 17%);
     --background-color-nav-and-boxes: hsl(209, 23%, 22%);
-    --background-color-boxes-hover: hsl(0, 0%, 10%);
+    --background-color-boxes-hover: hsl(209, 23%, 15%);
     --text-color: white;
     --box-shadow-search-region: 0 0 10px hsl(0, 0%, 10%);
 }
