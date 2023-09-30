@@ -10,19 +10,38 @@ export { matching };
 
 let fuse;
 
+const darkModeText = darkModeToggler.querySelector('.dark-mode-text')
+const darkModeIcon = darkModeToggler.querySelector('.fa-regular')
 
 // getting users choice if its dark mode apply the styles 
 const userPreference = localStorage.getItem('dark-mode-preference');
 if(userPreference === 'dark'){
     document.body.classList.add('dark-mode');
+    darkModeText.textContent = `Light Mode`
+    darkModeIcon.classList.remove('fa-moon')
+    darkModeIcon.classList.add('fa-sun')
 }
 //applying dark mode
 darkModeToggler.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
+    
     // saving users choice
     const isDarkMode = document.body.classList.contains('dark-mode');
+    
+    if(isDarkMode){
+        darkModeText.textContent = `Light Mode`
+        darkModeIcon.classList.remove('fa-moon')
+        darkModeIcon.classList.add('fa-sun')
+    }
+    else{
+        darkModeText.textContent = `Dark Mode`;
+        darkModeIcon.classList.add('fa-moon')
+        darkModeIcon.classList.remove('fa-sun')
+    }
+    
     localStorage.setItem('dark-mode-preference', isDarkMode ? 'dark' : 'light');
 });
+
 
 function renderCountries(data){
     data.forEach((country) => {
@@ -32,7 +51,7 @@ function renderCountries(data){
             countriesContainer.innerHTML += `
             <a href="country-details.html">
                 <div class="country">
-                    <img src="${country.flag}" alt="flag">
+                    <img src="${country.flags.svg}" alt="flag">
                     <div class="country-content">
                         <h3>${country.name}</h3>
                         <p><span>Population: </span>${country.population}</p>
